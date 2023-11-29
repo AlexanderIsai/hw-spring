@@ -17,29 +17,29 @@ public class MessageController {
     private List<Integer> counts = new ArrayList<>();
 
     @GetMapping(value = "/message")
-    public String someString(){
+    public String someString() {
         Random random = new Random();
         return (random.nextBoolean()) ? greeting : noGreeting;
     }
 
     @GetMapping(value = "/count")
-    public void increaseCount(){
+    public void increaseCount() {
         count++;
     }
 
     @GetMapping(value = "/info")
-    public int showCount(){
+    public int showCount() {
         return count;
     }
 
     @GetMapping(value = "/save-and-reset")
-    public void addCounterToList(){
+    public void addCounterToList() {
         counts.add(count);
         count = 0;
     }
 
     @GetMapping(value = "/list")
-    public List<Integer> showList(){
+    public List<Integer> showList() {
         return counts;
     }
 }
